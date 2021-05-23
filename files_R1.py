@@ -13,10 +13,10 @@ import csv
 # IMPORTANT: AFTER LAST DRIVE, THER IS NO COMMA AFTER THE BRACKET
 
 yourdrives = [ 
-                [ 'E:/ChiaFinal', 'Easy'],
-                [ 'Z:/ChiaFinal', 'NAS'],
-                ['F:/ChiaFinalFarm', 'Alpha'],
-                ['H:/', 'Beta'],
+                ['//MSF-SERVER/Easy/ChiaFinal', 'Easy'],
+                ['Z:/ChiaFinal', 'NAS'],
+                ['//MSF-SERVER/Alpha/ChiaFinalFarm', 'Alpha'],
+                ['//MSF-SERVER/Beta', 'Beta'],
                 ['//MUMUS_WKH/Delta/ChiaFinalFarm', 'Delta'],
                 ['//MUMUS_WKH/Epsilon/ChiaFinalFarm', 'Epsilon'],
                 ['//MUMUS_WKH/Gama/', 'Gama'],
@@ -59,6 +59,7 @@ for name in datafiles:
         if yourpaths[yourpaths_names.index(name_path)] == caminho:
             nome_caminho = name_path
     nome_arquivo = (name[-len(name)+inicio:])
+    #nome_arquivo = 'PLOTname.plot'
     data_string = (name[inicio+9:inicio+9+16])
     data_valor = (datetime.strptime(name[inicio+9:inicio+9+16], "%Y-%m-%d-%H-%M"))
     data_string_resumida = data_valor.strftime("%Y.%m.%d")

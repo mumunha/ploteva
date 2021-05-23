@@ -7,7 +7,7 @@ import operator
 ## NORMALMENTE: C:\Users\YOUR_USER\.chia\mainnet\plotter <-- YOUR_USER: SEU USUARIO DO WINDOWS
 ## CHANGE TO THE PATH WHERE LOGS ARE SAVED
 ## USUALLY: C:\Users\YOUR_USER\.chia\mainnet\plotter <-- YOUR USER: WINDOWS USER NAME
-yourpath = 'D:\logs_test2_apagar'
+yourpath = r'C:\Users\MUMUS_PW2\.chia\mainnet\plotter'
 
 ideas = [
         [0, "DateTimeStart", "mid_date", 0, 62, 20, "Starting phase 1", "", "", ""]
@@ -74,7 +74,8 @@ for root, dirs, files in os.walk(yourpath, topdown=False):
     file_count = 0
     for name in files:
         
-        general = general + [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]    
+        temp_datetime = datetime.now()
+        general = general + [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,temp_datetime,0,0,0,0]]    
         
         print(os.path.join(root, name))
         # Using readlines()
@@ -150,6 +151,7 @@ for i in range (0,len(general)):
 # cria campo com numero do plot
 for i in range (0,len(general)):
     general[i][41] = i+1
+    #general[i][38] = 'PLOTname.plot'
 
 #cria campo com descricao
 for i in range (0,len(general)):
